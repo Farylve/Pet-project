@@ -1,50 +1,22 @@
-import React, {  useEffect, useState } from 'react';
-
+import React, { useEffect, useState } from "react"
+import "antd/dist/antd.min.css"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
+import { ProjectLayout } from "./pages/Layout/ProjectLayout"
+import Login from "./pages/Login/Components/Login"
+import MainPage from "./pages/MainPage/MainPage"
 function App() {
-  const [data, setData] = useState([{id: 9999}]);
-  const [dataPage, setDataPage] = useState([]);
+  // console.log('21', data);
 
-
-
-  const getApiData = async () => {
-    const response = await fetch(
-      "http://localhost:3001"
-    ).then((response) => response.json());
-      console.log('12', response);
-          setData(response);
-
-  };
-
-  useEffect(() => {
-    getApiData();
-    console.log('w21', data);
-    
-  }, []);
-console.log('21', data);
-
-      
-      
-      
-      
-      
-
-        return (
-<>
-<div>
-  {data?.map((el: any) => {
-    return (
-      <div>
-
-        {el.id}
-      </div>
-    )
-  })}
-</div>
-
-</>
-        ) 
-        
-      
+  return (
+    <BrowserRouter>
+      <ProjectLayout>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/main" element={<MainPage />} />
+        </Routes>
+      </ProjectLayout>
+    </BrowserRouter>
+  )
 }
 
-export default App;
+export default App
