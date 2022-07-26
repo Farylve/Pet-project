@@ -4,8 +4,10 @@ import {
   LaptopOutlined,
   NotificationOutlined,
   UserOutlined,
+  WalletOutlined
 } from "@ant-design/icons"
 import { Navigate, useLocation, useNavigate } from "react-router-dom"
+import logo from "../../static/logo.svg"
 
 interface LayoutProps {
   children: JSX.Element | JSX.Element[]
@@ -35,7 +37,7 @@ const items1: MenuProps["items"] = ["1", "2", "3"].map((key) => ({
 }))
 
 const items2: MenuProps["items"] = [
-  UserOutlined,
+  WalletOutlined,
   LaptopOutlined,
   NotificationOutlined,
 ].map((icon, index) => {
@@ -44,7 +46,7 @@ const items2: MenuProps["items"] = [
   return {
     key: `sub${key}`,
     icon: React.createElement(icon),
-    label: `subnav ${key}`,
+    label: `Кошелек`,
 
     children: new Array(4).fill(null).map((_, j) => {
       const subKey = index * 4 + j + 1
@@ -74,13 +76,19 @@ export const ProjectLayout: FC<LayoutProps> = ({ children }) => {
   return isLogin ? (
     <Layout style={{height: '100vh'}} >
       <Header className="header">
-        <div className="logo" />
+  
+      <div className="logo" >
+      <img src={logo} height="50"></img>
+
+        </div>
+       
         <Menu
           theme="dark"
           mode="horizontal"
           defaultSelectedKeys={["2"]}
           items={items1}
         />
+    
       </Header>
       <Layout>
         <Sider width={200} className="site-layout-background">
@@ -91,8 +99,9 @@ export const ProjectLayout: FC<LayoutProps> = ({ children }) => {
             style={{ height: "100%", borderRight: 0 }}
             items={items2}
           />
+                
         </Sider>
-        <Layout style={{ padding: "0 24px 24px" }}>
+        <Layout >
           <Content
             className="site-layout-background"
             style={{
