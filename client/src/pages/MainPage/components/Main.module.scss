@@ -1,0 +1,40 @@
+.headerButton {
+    width: 200px;
+text-align: center;
+    margin-top: 20px;
+    background-color: #ffdd2d;
+    color: #333;
+    border-radius: 4px;
+    height: 40px;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+
+.headerButton:hover  {
+    @extend .headerButton;
+   background-color: #fcc521;
+
+}
+
+.headerButton:active  {
+    @extend .headerButton;
+   background-color: #fab619;
+
+}
+
+.contentHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom:20px;
+}
+
+.tableHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+    border-bottom: 1.5px solid #dddfe0;
+}
+

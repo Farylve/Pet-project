@@ -1,0 +1,70 @@
+.formWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 20vh;
+}
+
+.form {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+        width: 300px;
+    
+
+      
+        
+
+}
+.buttons {
+    width: 100%;
+text-align: center;
+    margin-top: 20px;
+    background-color: #ffdd2d;
+    color: #333;
+    border-radius: 4px;
+    height: 40px;
+    border: none;
+    transition: background 0.3s ease;
+}
+
+
+.buttons:hover  {
+    @extend .buttons;
+   background-color: #fcc521;
+
+}
+
+.buttons:active  {
+    @extend .buttons;
+   background-color: #fab619;
+
+}
+
+.spanStyles {
+    position: relative;
+    left: 10px;
+    top: 10px;
+    background-color: #fff;
+
+}
+
+.styledInput {
+    width: 300px;
+    height: 40px;
+    border: 1px black solid;
+    border-radius: 4px;
+}
+
+
+.styledInput:focus {
+    @extend .styledInput ;
+    width: 300px;
+    height: 40px;
+    border: none;
+outline: none;
+border: 1px black solid;
+
+}
+
