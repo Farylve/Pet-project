@@ -3,8 +3,9 @@ import { IGetAllPurchase } from "./interfaces";
 
 
 
-export const getAllPurchase = createAsyncAction(
-  "GET_ALL_PURCHASE/QUERY",
-  "GET_ALL_PURCHASE/SUCCESS",
-  "GET_ALL_PURCHASE/FAILURE"
-)<IGetAllPurchase, any, any>();
+export const getAllPurchaseAction = createAsyncAction(
+  "STATE_FOR_ADD_FILE/QUERY",
+  "STATE_FOR_ADD_FILE/SUCCESS",
+  "STATE_FOR_ADD_FILE/FAILURE"
+)<any, any, any>();
+

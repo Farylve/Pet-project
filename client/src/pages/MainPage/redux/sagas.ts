@@ -3,12 +3,15 @@ import { notification } from "antd"
 import { put, takeLatest } from "redux-saga/effects"
 import { getType } from "typesafe-actions"
 
-import { getAllPurchase  } from "./actions"
+import { getAllPurchaseAction } from "./actions"
 
 
-export function* getAllPurchase(action: ReturnType<typeof getAllPurchase.request>) {
+export function* getAllPurchase(action: ReturnType<typeof getAllPurchaseAction.request>) {
   try {
-    yield put(.success(action.payload))
+    
+
+
+    yield put(getAllPurchaseAction.success(action.payload))
   } catch (error) {
     console.log(error)
   }
@@ -16,6 +19,6 @@ export function* getAllPurchase(action: ReturnType<typeof getAllPurchase.request
 
 
 export const sagas = [
-  takeLatest(getType(getAllPurchase.request), getAllPurchase),
+  takeLatest(getType(getAllPurchaseAction.request), getAllPurchase),
 
 ]
